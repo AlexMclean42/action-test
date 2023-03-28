@@ -30,7 +30,9 @@ jobs:
         # running the action
         uses: actions/checkout@v3
 
-      # another step.
-      # this step runs a bash (Ubuntu's default shell) command
-      - name: list files
-        run: ls
+
+      - name: install dependencies
+        run: pip install pytest
+
+      - name: test
+        run: python -m pytest -v
