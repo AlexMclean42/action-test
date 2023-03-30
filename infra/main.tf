@@ -20,7 +20,7 @@ data "aws_iam_policy_document" "gh" {
   statement {
     effect    = "Allow"
     actions   = ["s3:ListBuckets"]
-    resources = ["*"]
+    resources = ["${local.s3_arn}", "${local.s3_arn}/*"]
   }
 }
 
