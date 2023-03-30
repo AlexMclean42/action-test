@@ -1,11 +1,26 @@
-def add(a, b):
-    return a+b
+import json
 
-def subtract(a, b):
-    return a-b
+def handler(event, context):
+    return {
+        "statusCode": 200,
+        "body": json.dumps({
+            "version": 1
+        })
+    }
 
-def divide(a, b):
-    return a//b
 
-def multiply(a, b):
-    return a*b
+
+
+
+
+# def add(a, b):
+#     return a+b
+
+# def subtract(a, b):
+#     return a-b
+
+# def divide(a, b):
+#     return a//b
+
+# def multiply(a, b):
+#     return a*b
