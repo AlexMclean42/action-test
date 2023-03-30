@@ -1,0 +1,23 @@
+# name of the workflow.
+# this is optional.
+name: Deploy
+
+# events that will trigger this workflow.
+# here, we only have "pull_request", so the workflow will run
+# whenever we create a pull request.
+# other examples: [push] and [pull_request, push]
+on: [push]
+
+# each workflow must have at least one job.
+# jobs run in parallel by default (we can change that).
+# each job groups together a series of steps to accomplish a purpose.
+jobs:
+  # name of the job
+  deploy:
+    runs-on: macos-11
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: aws-dryrun
+        run: aws s3 ls
